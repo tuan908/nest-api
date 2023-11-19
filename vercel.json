@@ -2,7 +2,7 @@
     "version": 2,
     "outputDirectory": "dist",
 		"buildCommand": "npm run build",
-		"function": {
+		"functions": {
 			"/main.js": {
 				"memory": 4096,
 				"maxDuration": 30
