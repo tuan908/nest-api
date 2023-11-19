@@ -28,7 +28,6 @@ export class BookingService {
     newBooking.guest = await this.dataSource.manager.findOneBy(Guest, {
       zaloId: createBookingDto.zaloId,
     });
-    newBooking.guestName = newBooking.guest?.name;
     newBooking.bookingName = createBookingDto.bookingName;
     newBooking.bookingPhone = createBookingDto.bookingPhone;
     try {

@@ -68,6 +68,9 @@ export class MenuChoicesService {
           masterDatum: [{ id: category }],
         },
         take: limit,
+        order: {
+            order: 'ASC'
+        }
       });
       return {
         data,

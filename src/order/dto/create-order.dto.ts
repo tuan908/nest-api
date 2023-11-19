@@ -1,1 +1,6 @@
-export class CreateOrderDto {}
+export class CreateOrderDto {
+  zaloId: string;
+  menuChoicesId: string;
+  employeeId: string;
+  noteForEmployee?: string;
+}

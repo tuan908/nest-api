@@ -1,6 +1,5 @@
 import { BaseEntity } from 'src/BaseEntity';
-import { Order } from 'src/order/entities/order.entity';
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Employee extends BaseEntity {
@@ -11,12 +10,9 @@ export class Employee extends BaseEntity {
   name: string;
 
   @Column({
-    name: 'start_working_at',
+    name: 'start_working_date',
     type: 'timestamp without time zone',
     default: new Date(),
   })
-  startWorkingFrom: Date;
-
-  @OneToMany(() => Order, (order) => order.employee)
-  orders: Order[];
+  startWorkingDate: Date;
 }

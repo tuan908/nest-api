@@ -34,7 +34,25 @@ export class MenuChoices {
   @Column('float8')
   rating: number;
 
+    @Column({
+        type: 'int',
+        name: 'order'
+    })
+    order: number;
+
   @OneToOne(() => MasterDatum)
   @JoinColumn({ name: 'category', referencedColumnName: 'id' })
   masterDatum: MasterDatum;
+
+    @Column({
+        type: 'timestamp',
+        name: 'created_at'
+    })
+    createdAt: Date;
+
+    @Column({
+        type: 'timestamp',
+        name: 'updated_at'
+    })
+    updatedAt: Date;
 }

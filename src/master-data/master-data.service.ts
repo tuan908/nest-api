@@ -22,6 +22,9 @@ export class MasterDataService {
     try {
       const data = await this.masterDatumRepository.find({
         where: [{ type: 'menu_category' }],
+        order: {
+            order: 'ASC'
+        }
       });
       return { data, message: 'Successful', status: 'OK', success: true };
     } catch (error) {

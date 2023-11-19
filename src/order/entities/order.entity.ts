@@ -6,7 +6,6 @@ import {
   Column,
   Entity,
   JoinColumn,
-  ManyToOne,
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
@@ -19,17 +18,18 @@ export class Order {
   @Column({ name: 'note_for_employee', type: 'text' })
   noteForEmployee: string;
 
-  @Column({
-    name: 'created_at',
-    type: 'timestamp without time zone',
-    default: new Date(),
+  @OneToOne(() => Employee)
+  @JoinColumn({
+    name: 'employee_id',
+    referencedColumnName: 'id',
   })
-  created_at: Date;
-
-  @ManyToOne(() => Employee, (employee) => employee.orders)
   employee: Employee;
 
-  @ManyToOne(() => Guest, (guest) => guest.orders)
+  @OneToOne(() => Guest)
+  @JoinColumn({
+    name: 'guest_id',
+    referencedColumnName: 'id',
+  })
   guest: Guest;
 
   @OneToOne(() => MasterDatum)
