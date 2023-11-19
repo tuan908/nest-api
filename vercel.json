@@ -2,21 +2,11 @@
     "version": 2,
     "outputDirectory": "dist",
 		"buildCommand": "npm run build",
-		"builds": [
-      {
-        "src": "dist/src/main.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "dist/src/main.js"
-      },
-			{
-				"src": "/(.*)",
-				"dest": "/"
+		"function": {
+			"/main.js": {
+				"memory": 4096,
+				"maxDuration": 30
 			}
-    ]
-  }
+		}
+}
   
