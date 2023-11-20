@@ -1,5 +1,5 @@
-import { BaseEntity } from 'src/BaseEntity';
-import { Guest } from 'src/guest/entities/guest.entity';
+import {BaseEntity} from 'src/BaseEntity';
+import {Guest} from 'src/guest/entities/guest.entity';
 import {
   Column,
   Entity,
@@ -8,30 +8,30 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
-@Entity({ name: 'booking' })
+@Entity({name: 'booking'})
 export class Booking extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ name: 'booking_name', type: 'text' })
+  @Column({name: 'booking_name', type: 'text'})
   bookingName: string;
 
-  @Column({ name: 'booking_phone', type: 'varchar' })
+  @Column({name: 'booking_phone', type: 'varchar'})
   bookingPhone: string;
 
-  @Column({ name: 'date', type: 'date' })
+  @Column({name: 'date', type: 'date'})
   date: Date;
 
-  @Column({ name: 'time', type: 'time' })
+  @Column({name: 'time', type: 'time'})
   time: Date;
 
-  @Column({ name: 'note', default: '', type: 'text' })
+  @Column({name: 'note', default: '', type: 'text'})
   note?: string;
 
   @Column('bool')
   successful: boolean;
 
-  @Column({ name: 'failed_reason', type: 'text' })
+  @Column({name: 'failed_reason', type: 'text'})
   failedReason: string;
 
   @OneToOne(() => Guest)
@@ -41,6 +41,6 @@ export class Booking extends BaseEntity {
   })
   guest: Guest;
 
-  @Column({ name: 'guest_name', type: 'text' })
+  @Column({name: 'guest_name', type: 'text'})
   guestName: string;
 }

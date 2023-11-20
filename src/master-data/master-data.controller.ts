@@ -7,9 +7,9 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
-import { CreateMasterDatumDto } from './dto/create-master-datum.dto';
-import { UpdateMasterDatumDto } from './dto/update-master-datum.dto';
-import { MasterDataService } from './master-data.service';
+import {CreateMasterDatumDto} from './dto/create-master-datum.dto';
+import {UpdateMasterDatumDto} from './dto/update-master-datum.dto';
+import {MasterDataService} from './master-data.service';
 
 @Controller('master-data')
 export class MasterDataController {

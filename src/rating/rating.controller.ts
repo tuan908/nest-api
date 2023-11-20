@@ -7,10 +7,10 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
-import { BaseDto } from 'src/BaseDto';
-import { CreateRatingDto } from './dto/create-rating.dto';
-import { UpdateRatingDto } from './dto/update-rating.dto';
-import { RatingService } from './rating.service';
+import {BaseDto} from 'src/BaseDto';
+import {CreateRatingDto} from './dto/create-rating.dto';
+import {UpdateRatingDto} from './dto/update-rating.dto';
+import {RatingService} from './rating.service';
 
 @Controller('rating')
 export class RatingController {

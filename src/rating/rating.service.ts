@@ -1,13 +1,13 @@
-import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { randomUUID } from 'crypto';
-import { BaseDto } from 'src/BaseDto';
-import { Guest } from 'src/guest/entities/guest.entity';
-import { GuestService } from 'src/guest/guest.service';
-import { DataSource, Repository } from 'typeorm';
-import { CreateRatingDto } from './dto/create-rating.dto';
-import { UpdateRatingDto } from './dto/update-rating.dto';
-import { Rating } from './entities/rating.entity';
+import {Injectable} from '@nestjs/common';
+import {InjectRepository} from '@nestjs/typeorm';
+import {randomUUID} from 'crypto';
+import {BaseDto} from 'src/BaseDto';
+import {Guest} from 'src/guest/entities/guest.entity';
+import {GuestService} from 'src/guest/guest.service';
+import {DataSource, Repository} from 'typeorm';
+import {CreateRatingDto} from './dto/create-rating.dto';
+import {UpdateRatingDto} from './dto/update-rating.dto';
+import {Rating} from './entities/rating.entity';
 
 @Injectable()
 export class RatingService {
@@ -21,7 +21,7 @@ export class RatingService {
   async findAllByGuestId(guestId: string): Promise<BaseDto<Rating>> {
     try {
       const data = await this.ratingRepository.find({
-        where: { guest: [{ id: guestId }] },
+        where: {guest: [{id: guestId}]},
       });
 
       return {

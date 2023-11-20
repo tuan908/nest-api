@@ -1,4 +1,4 @@
-import { MasterDatum } from 'src/master-data/entities/master-data.entity';
+import {MasterDatum} from 'src/master-data/entities/master-data.entity';
 import {
   Column,
   Entity,
@@ -7,7 +7,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
-@Entity({ name: 'menu_choices' })
+@Entity({name: 'menu_choices'})
 export class MenuChoices {
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -34,25 +34,25 @@ export class MenuChoices {
   @Column('float8')
   rating: number;
 
-    @Column({
-        type: 'int',
-        name: 'order'
-    })
-    order: number;
+  @Column({
+    type: 'int',
+    name: 'order',
+  })
+  order: number;
 
   @OneToOne(() => MasterDatum)
-  @JoinColumn({ name: 'category', referencedColumnName: 'id' })
+  @JoinColumn({name: 'category', referencedColumnName: 'id'})
   masterDatum: MasterDatum;
 
-    @Column({
-        type: 'timestamp',
-        name: 'created_at'
-    })
-    createdAt: Date;
+  @Column({
+    type: 'timestamp',
+    name: 'created_at',
+  })
+  createdAt: Date;
 
-    @Column({
-        type: 'timestamp',
-        name: 'updated_at'
-    })
-    updatedAt: Date;
+  @Column({
+    type: 'timestamp',
+    name: 'updated_at',
+  })
+  updatedAt: Date;
 }

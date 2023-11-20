@@ -1,6 +1,6 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { MasterDataController } from './master-data.controller';
-import { MasterDataService } from './master-data.service';
+import {Test, TestingModule} from '@nestjs/testing';
+import {MasterDataController} from './master-data.controller';
+import {MasterDataService} from './master-data.service';
 
 describe('MasterDataController', () => {
   let controller: MasterDataController;

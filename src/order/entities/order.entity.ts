@@ -1,7 +1,7 @@
-import { Employee } from 'src/employee/entities/employee.entity';
-import { Guest } from 'src/guest/entities/guest.entity';
-import { MasterDatum } from 'src/master-data/entities/master-data.entity';
-import { MenuChoices } from 'src/menu-choices/entities/menu-choices.entity';
+import {Employee} from 'src/employee/entities/employee.entity';
+import {Guest} from 'src/guest/entities/guest.entity';
+import {MasterDatum} from 'src/master-data/entities/master-data.entity';
+import {MenuChoices} from 'src/menu-choices/entities/menu-choices.entity';
 import {
   Column,
   Entity,
@@ -15,7 +15,7 @@ export class Order {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ name: 'note_for_employee', type: 'text' })
+  @Column({name: 'note_for_employee', type: 'text'})
   noteForEmployee: string;
 
   @OneToOne(() => Employee)

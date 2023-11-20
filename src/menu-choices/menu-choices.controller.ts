@@ -8,10 +8,10 @@ import {
   Post,
   Query,
 } from '@nestjs/common';
-import { CreateMenuChoicesDto } from './dto/create-menu-choices.dto';
-import { UpdateMenuChoicesDto } from './dto/update-menu-choices.dto';
-import { MenuChoicesService as MenuChoicesService } from './menu-choices.service';
-import { number } from 'joi';
+import {CreateMenuChoicesDto} from './dto/create-menu-choices.dto';
+import {UpdateMenuChoicesDto} from './dto/update-menu-choices.dto';
+import {MenuChoicesService as MenuChoicesService} from './menu-choices.service';
+import {number} from 'joi';
 
 @Controller('menu-choices')
 export class MenuChoicesController {

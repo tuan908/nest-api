@@ -1,11 +1,11 @@
-import { Injectable } from '@nestjs/common';
-import { randomUUID } from 'crypto';
-import { BaseDto } from 'src/BaseDto';
-import { Guest } from 'src/guest/entities/guest.entity';
-import { DataSource } from 'typeorm';
-import { CreateBookingDto } from './dto/create-booking.dto';
-import { UpdateBookingDto } from './dto/update-booking.dto';
-import { Booking } from './entities/booking.entity';
+import {Injectable} from '@nestjs/common';
+import {randomUUID} from 'crypto';
+import {BaseDto} from 'src/BaseDto';
+import {Guest} from 'src/guest/entities/guest.entity';
+import {DataSource} from 'typeorm';
+import {CreateBookingDto} from './dto/create-booking.dto';
+import {UpdateBookingDto} from './dto/update-booking.dto';
+import {Booking} from './entities/booking.entity';
 
 @Injectable()
 export class BookingService {

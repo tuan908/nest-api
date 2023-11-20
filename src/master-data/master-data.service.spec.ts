@@ -1,5 +1,5 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { MasterDataService } from './master-data.service';
+import {Test, TestingModule} from '@nestjs/testing';
+import {MasterDataService} from './master-data.service';
 
 describe('MasterDataService', () => {
   let service: MasterDataService;

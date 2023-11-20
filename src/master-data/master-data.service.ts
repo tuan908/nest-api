@@ -1,10 +1,10 @@
-import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { BaseDto } from 'src/BaseDto';
-import { DataSource, Repository } from 'typeorm';
-import { CreateMasterDatumDto } from './dto/create-master-datum.dto';
-import { UpdateMasterDatumDto } from './dto/update-master-datum.dto';
-import { MasterDatum } from './entities/master-data.entity';
+import {Injectable} from '@nestjs/common';
+import {InjectRepository} from '@nestjs/typeorm';
+import {BaseDto} from 'src/BaseDto';
+import {DataSource, Repository} from 'typeorm';
+import {CreateMasterDatumDto} from './dto/create-master-datum.dto';
+import {UpdateMasterDatumDto} from './dto/update-master-datum.dto';
+import {MasterDatum} from './entities/master-data.entity';
 
 @Injectable()
 export class MasterDataService {
@@ -21,12 +21,12 @@ export class MasterDataService {
   async findAllMenuCategory(): Promise<BaseDto<MasterDatum>> {
     try {
       const data = await this.masterDatumRepository.find({
-        where: [{ type: 'menu_category' }],
+        where: [{type: 'menu_category'}],
         order: {
-            order: 'ASC'
-        }
+          order: 'ASC',
+        },
       });
-      return { data, message: 'Successful', status: 'OK', success: true };
+      return {data, message: 'Successful', status: 'OK', success: true};
     } catch (error) {
       return {
         data: [],
@@ -39,7 +39,7 @@ export class MasterDataService {
 
   async findOne(id: string): Promise<BaseDto<MasterDatum>> {
     try {
-      const data = await this.masterDatumRepository.findOneBy({ id });
+      const data = await this.masterDatumRepository.findOneBy({id});
       return {
         data,
         message: 'Successful',

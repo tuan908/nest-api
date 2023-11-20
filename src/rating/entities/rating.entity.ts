@@ -1,5 +1,5 @@
-import { BaseEntity } from 'src/BaseEntity';
-import { Guest } from 'src/guest/entities/guest.entity';
+import {BaseEntity} from 'src/BaseEntity';
+import {Guest} from 'src/guest/entities/guest.entity';
 import {
   Column,
   Entity,
@@ -13,7 +13,7 @@ export class Rating extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ name: 'star_number', type: 'int4' })
+  @Column({name: 'star_number', type: 'int4'})
   starNumber: number;
 
   @Column()

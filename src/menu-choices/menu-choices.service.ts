@@ -1,10 +1,10 @@
-import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { BaseDto } from 'src/BaseDto';
-import { Repository } from 'typeorm';
-import { CreateMenuChoicesDto } from './dto/create-menu-choices.dto';
-import { UpdateMenuChoicesDto } from './dto/update-menu-choices.dto';
-import { MenuChoices } from './entities/menu-choices.entity';
+import {Injectable} from '@nestjs/common';
+import {InjectRepository} from '@nestjs/typeorm';
+import {BaseDto} from 'src/BaseDto';
+import {Repository} from 'typeorm';
+import {CreateMenuChoicesDto} from './dto/create-menu-choices.dto';
+import {UpdateMenuChoicesDto} from './dto/update-menu-choices.dto';
+import {MenuChoices} from './entities/menu-choices.entity';
 
 @Injectable()
 export class MenuChoicesService {
@@ -42,7 +42,7 @@ export class MenuChoicesService {
   async findOne(id: string): Promise<BaseDto<MenuChoices>> {
     try {
       return {
-        data: await this.menuChoicesRepository.findOneBy({ id }),
+        data: await this.menuChoicesRepository.findOneBy({id}),
         message: process.env.MSG_OK,
         status: 'OK',
         success: true,
@@ -65,12 +65,12 @@ export class MenuChoicesService {
     try {
       const data = await this.menuChoicesRepository.find({
         where: {
-          masterDatum: [{ id: category }],
+          masterDatum: [{id: category}],
         },
         take: limit,
         order: {
-            order: 'ASC'
-        }
+          order: 'ASC',
+        },
       });
       return {
         data,
