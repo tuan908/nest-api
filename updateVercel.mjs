@@ -10,7 +10,7 @@ async function main() {
     encoding: 'utf8',
   });
   for (const file of files) {
-    let data = `{"version":2,"framework":null,"builds":[{"src":"dist/${file}","use":"@vercel/node"}],"routes":[{"src":"/(.*)","dest":"dist/${file}"}]}`;
+    let data = `{"version":2,"framework":null,"buildCommand":"nest build --builder webpack --webpackPath webpack.config.js && node ./updateVercel.mjs"","builds":[{"src":"dist/${file}","use":"@vercel/node"}],"routes":[{"src":"/(.*)","dest":"dist/${file}"}]}`;
     fs.writeFile(path.join(esDirname, 'vercel.json'), data, {encoding: 'utf8'});
   }
 }
