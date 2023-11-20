@@ -11,7 +11,22 @@ async function main() {
   });
   for (const file of files) {
     let data = `{"version":2,"builds":[{"src":"dist/${file}","use":"@vercel/node"}],"routes":[{"src":"/(.*)","dest":"dist/${file}"}]}`;
+
+    let renderData = `
+services:
+- type: web
+  name: nest-api
+  env: node
+  repo: https://github.com/tuan908/nest-api.git
+  buildCommand: pnpm install
+  startCommand: node dist/${file}
+  plan: free
+  autoDeploy: false 
+    `;
     fs.writeFile(path.join(esDirname, 'vercel.json'), data, {encoding: 'utf8'});
+    fs.writeFile(path.join(esDirname, 'render.yaml'), renderData, {
+      encoding: 'utf8',
+    });
   }
 }
 
