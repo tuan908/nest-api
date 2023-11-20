@@ -1,1 +1,1 @@
-{"version":2,"builds":[{"src":"dist/main.1c601c0e09742371.production.min.js","use":"@vercel/node"}],"routes":[{"src":"/(.*)","dest":"dist/main.1c601c0e09742371.production.min.js"}]}
+{"version":2,"framework":null,"builds":[{"src":"dist/main.1c601c0e09742371.production.min.js","use":"@vercel/node"}],"routes":[{"src":"/(.*)","dest":"dist/main.1c601c0e09742371.production.min.js"}]}
