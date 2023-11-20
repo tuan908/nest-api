@@ -6,9 +6,17 @@ module.exports = function (options) {
     ...options,
     mode: 'production',
     output: {
-      filename: 'main.[fullhash].bundle.js',
+      filename: 'main.[chunkhash].production.min.js',
       path: path.resolve(__dirname, 'dist'),
       clean: true,
+    },
+    experiments: {
+      futureDefaults: true,
+    },
+    optimization: {
+      splitChunks: {
+        chunks: 'all',
+      },
     },
   };
 

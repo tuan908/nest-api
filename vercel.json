@@ -1,1 +1,1 @@
-{"version":2,"builds":[{"src":"dist/main.a61ddffd999dafa9b77e.bundle.js","use":"@vercel/node"}],"routes":[{"src":"/(.*)","dest":"dist/main.a61ddffd999dafa9b77e.bundle.js"}]}
+{"version":2,"builds":[{"src":"dist/main.1c601c0e09742371.production.min.js","use":"@vercel/node"}],"routes":[{"src":"/(.*)","dest":"dist/main.1c601c0e09742371.production.min.js"}]}
