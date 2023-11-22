@@ -18,11 +18,8 @@ export class MenuChoices {
   @Column('int4')
   price: number;
 
-  @Column({
-    name: 'text',
-    array: true,
-  })
-  figure: string;
+  @Column('text', {array: true})
+  figure: string[];
 
   @Column('text')
   note: string;

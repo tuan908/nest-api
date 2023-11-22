@@ -46,11 +46,7 @@ import {Employee} from './employee/entities/employee.entity';
         Rating,
         Notification,
       ],
-      logging:
-        process.env.NODE_ENV === 'development'
-          ? ['query', 'info', 'error']
-          : ['error'],
-      logger: 'file',
+      logging: false,
     }),
     MenuChoicesModule,
     BookingModule,
