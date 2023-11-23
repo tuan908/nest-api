@@ -18,6 +18,8 @@ import {EmployeeModule} from './employee/employee.module';
 import {Notification} from './notification/entities/notification.entity';
 import {Order} from './order/entities/order.entity';
 import {Employee} from './employee/entities/employee.entity';
+import {WebhookModule} from './webhook/webhook.module';
+import {WebhookEntity} from './webhook/entity/webhook.entity';
 
 @Module({
   imports: [
@@ -45,8 +47,13 @@ import {Employee} from './employee/entities/employee.entity';
         Order,
         Rating,
         Notification,
+        WebhookEntity,
       ],
-      logging: false,
+      logging:
+        process.env.NODE_ENV === 'development'
+          ? ['query', 'info', 'error']
+          : ['error'],
+      logger: 'file',
     }),
     MenuChoicesModule,
     BookingModule,
@@ -56,6 +63,7 @@ import {Employee} from './employee/entities/employee.entity';
     NotificationModule,
     OrderModule,
     EmployeeModule,
+    WebhookModule,
   ],
   controllers: [],
   providers: [],

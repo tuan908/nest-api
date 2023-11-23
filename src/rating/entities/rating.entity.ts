@@ -13,6 +13,18 @@ export class Rating extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  @Column({
+    type: 'text',
+    name: 'commenter_name',
+  })
+  commenterName: string;
+
+  @Column({
+    type: 'character',
+    name: 'commenter_phone',
+  })
+  commenterPhone: string;
+
   @Column({name: 'star_number', type: 'int4'})
   starNumber: number;
 

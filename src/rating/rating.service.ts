@@ -64,8 +64,14 @@ export class RatingService {
       const newRating = new Rating();
 
       newRating.id = randomUUID();
-      newRating.content = createRatingDto.content;
+      newRating.commenterName = createRatingDto.commenterName
+        ? createRatingDto.commenterName
+        : null;
+      newRating.commenterPhone = createRatingDto.commenterPhone
+        ? createRatingDto.commenterPhone
+        : null;
       newRating.starNumber = createRatingDto.starNumber;
+      newRating.content = createRatingDto.content;
       newRating.guest = guest;
 
       await queryRunner.manager.save(newRating);
