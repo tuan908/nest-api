@@ -1,5 +1,4 @@
-import {BaseEntity} from 'src/BaseEntity';
-import {Column, Entity, Long, PrimaryGeneratedColumn} from 'typeorm';
+import {Column, Entity, PrimaryGeneratedColumn} from 'typeorm';
 
 @Entity({
   name: 'webhook_events',
@@ -42,5 +41,5 @@ export class WebhookEntity {
     type: 'float8',
     name: 'timestamp',
   })
-  timestamp?: Long;
+  timestamp?: number;
 }
